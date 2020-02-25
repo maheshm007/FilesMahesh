@@ -1,0 +1,159 @@
+using System;
+using System.Linq;
+using System.Text;
+
+namespace StringPrograms
+{
+    class Program
+    {
+        private string name;
+        private int sal;
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+        
+        public int Sal
+        {
+            get
+            {
+                return sal;
+            }
+
+            set
+            {
+                sal = value;
+            }
+        }
+
+        public void inter()
+        {
+            string str, str1= string.Empty, newStr, newStr1 = string.Empty;
+            //Reverse sentance
+            Console.WriteLine("Enter sentance");
+            str = Console.ReadLine();
+            for(int i=str.Length-1; i>-1;i--)
+            {
+                Console.Write(str[i]);
+            }
+            Console.WriteLine();
+                
+            //Reverse words in sentance
+            Console.WriteLine("Enter sentance");
+            str = Console.ReadLine();
+            string [] splt = str.Split(" ");
+            StringBuilder st = new StringBuilder();
+            for(int i=splt.Length-1;i>-1; i--)
+            {
+                st.Append(splt[i]);
+                st.Append(" ");
+            }
+            Console.WriteLine(st);
+
+            //Reverse words in sentance
+            Console.WriteLine("Enter sentance");
+            str = Console.ReadLine();
+            string[] sp = str.Split(" ");
+
+            for (int i = 0; i < sp.Length; i++)
+            {
+                char[] ss = sp[i].ToCharArray();
+                for (int j=ss.Length-1;j>-1;j--)
+                {
+                    str1 += ss[j];
+                }
+            }
+            Console.WriteLine(str1);
+            Console.ReadLine();
+        }
+        public void anagrams()
+        {
+            string str, str1, newStr, newStr1 = string.Empty;
+            Console.Write("Enter str :");
+            str = Console.ReadLine();
+            Console.Write("Enter str1:");
+            str1 = Console.ReadLine();
+            char[] ch1 = str.ToLower().ToCharArray();
+            char[] ch2 = str1.ToLower().ToCharArray();
+            Array.Sort(ch1);
+            Array.Sort(ch2);
+            newStr = new string(ch1);
+            newStr1 = new string(ch2);
+            if (newStr.Equals(newStr1))
+                Console.WriteLine("str:{0} and str1:{1} are anagrams",newStr,newStr1);
+            else
+                Console.WriteLine("str{0} and str1{1} are not anagrams",newStr,newStr1);
+            Console.ReadLine();
+        }
+
+        public void revSentence()
+        {
+            string str = string.Empty;
+            Console.Write("Enter the sentence");
+            str = Console.ReadLine();
+            //Without string functions
+            for(int i=str.Length-1;i>-1;i--)
+            {
+                Console.Write(str[i]);
+            }
+            Console.ReadLine();
+            //With string functions
+            Console.Write("Enter the sentence");
+            str = Console.ReadLine();
+            Console.WriteLine(str.Reverse().ToArray());
+            Console.ReadLine();
+            //Reverse words in sentence with string builder
+            Console.Write("Enter the sentence");
+            str = Console.ReadLine();
+            StringBuilder sb = new StringBuilder();
+            string[] split = str.Split(' ');
+            for(int i=split.Length-1;i>-1;i--)
+            {
+                sb.Append(split[i]);
+                sb.Append(" ");
+            }
+            Console.WriteLine(sb);
+            Console.ReadLine();
+            //Reverse words in sentence with string functions
+            Console.Write("Enter the sentence");
+            str = Console.ReadLine();
+            Console.WriteLine(string.Join(" ", str.Split(' ').Reverse()));
+        }
+
+        public void dupCharsInString()
+        {
+            string str = string.Empty;
+            Console.Write("Enter the sentence :");
+            str = Console.ReadLine();
+            while(str.Length > 0)
+            {
+                Console.Write(str[0] + ":");
+                int count = 0;
+                for(int i=0;i<str.Length;i++)
+                {
+                    if (str[0] == str[i])
+                        count += 1;
+                }
+                Console.WriteLine(count);
+                str = str.Replace(str[0].ToString(), String.Empty);
+            }
+            Console.ReadLine();
+        }
+        static void Main(string[] args)
+        {
+            Program p = new Program();
+            p.inter();
+            //p.name = "Mahesh";
+            //p.sal = 90000;
+            //Console.WriteLine("Name:{0} and Sal:{1} are as below", p.name, p.sal);
+        }
+    }
+}

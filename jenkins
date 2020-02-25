@@ -1,0 +1,66 @@
+Jenkins and Git 
+
+Question: What is Jenkins
+
+Answer:
+1. Jenkins is a free open source Continuous Integration tool and automation server 
+   to monitor continuous integration and delivery. It is written in Java.
+  
+Question: What are the features of jenkins
+
+Answer:
+1. It is an extensible automation server which helps for continuous integration and continuous delivery
+2. Jenkins supports contineous integration so it allows developers to commit multiple codes changes every day.
+   So it helps to found any defects or breackages in the early stage of application development life cucle
+3. It also allows developers to integrate there code changes into the project
+4. Jenkins support many useful plugins some of them are listed below
+   Maven 2 project
+   Git
+   Amazon EC2
+   HTML publisher
+   Copy artifact
+   Join
+   Green Balls
+5. It is free and open source and Easy to set up, install and use on any platform because it is based on Java
+6. Supports distributed builds due to master-slave architecture, thus reducing the load on the CI server
+
+Question: Other contineous integration tools and how jenkins better than those
+
+ Answer: Below are some other contineous integration tools 
+    
+	 TeamCity
+	 Bamboo
+     Perforce
+     Circle CI
+     Go
+     ThoughtWorks
+     Integrity
+     Travis CI
+	 
+	 As jenkins is free ware and supports many plugins and not so complex like Team city and bamboo offers efficient and faster
+	 but not completely free
+	 
+Question:How do you install Jenkins?
+Answer: To install Jenkins, make sure the following are installed –
+
+Java (version 8)
+Apache Tomcat (version 9)
+Download the Jenkins war file and deploy it using Tomcat. 
+You can choose to install the plugins suggested by Jenkins during the installation itself. 
+Once the installation is done, you will be able to see the Jenkins dashboard.
+
+Question: How can you create a job?
+Answer: On the dashboard page, you can just select a ‘New Job’. 
+When you create a job, you can choose options such as the SCM, triggers to control, the build script and notifications.
+
+Question: What is meant by Jenkins pipeline?
+Answer: A pipeline is a group of interlinked jobs done one after the other in a sequence. To integrate and implement continuous delivery pipelines, Jenkins pipelines provides a combination of plugins. The instructions to be performed are given through code. A continuous delivery pipeline can be represented as –
+
+Question: What are the types of pipelines in Jenkins?
+Answer: There are 3 types –
+
+CI CD pipeline (Continuous Integration Continuous Delivery)
+Scripted pipeline
+Declarative pipeline
+
+

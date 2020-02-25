@@ -1,0 +1,37 @@
+1. C# interview questions
+2. Selenium Questions
+3. API interview questions (rest, json and postman)
+4. SQL interview questions
+5. Jenkins,git,CICD
+6. BDD, Data driven framework and white/coded UI framework
+7. VSTS/TFS,Jira knowladge
+
+
+difference between put and post
+diference between soup and rest
+difference between drop delete and truncate
+how to insert value into text box without using send keys
+scroll down till the web element javascript
+how to find the third highest salary
+When to use having and group by clause
+how to insert values into excel sheet
+how to read text from pdf
+
+Interview questions
+1. Exceptions in selenium
+2. There are multiple iframes and need to search an element present in perticular iframe
+3. How to handle the window popup other that autoit
+4. Explaine yor automation framework
+5. How to identify siblings in xpath
+6. Synchronization in selenium (wait methods)
+7. difference between get and navigateto methods
+8. Where you use oops concepts in your automation framework
+9. Collections in c# difference between list and set
+10. What is hash map and how you use hash map
+11. What typw of exception will throw when you fetching data from excel to hash map and storing in hash map whnt there are duplicate keys (like you are using colimn header of excel file as key)
+12. How to insert value into text box without using send keys
+13. Scroll down till the web element javascript
+14. How to read text from pdf
+15. How to insert value into text box without using send keys
+16. Scroll down till the web element javascript
+

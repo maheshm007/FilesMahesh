@@ -1,0 +1,129 @@
+Scenario context: is a static class used to store the state of corrent scenario context 
+
+Feature Context: 
+
+SpecFlow provides access to the current test context using both FeatureContext and the more commonly used ScenarioContext. 
+FeatureContext persists for the duration of the execution of an entire feature, whereas ScenarioContext only persists for the duration of a scenario.
+
+Difference between Scenario Outline & Table
+Scenario Outline:
+
+This uses Example keyword to define the test data for the Scenario
+This works for the whole test
+Cucumber automatically run the complete test the number of times equal to the number of data in the Test Set
+Tables:
+
+No keyword is used to define the test data
+This works only for the single step, below which it is defined
+A separate code needs to understand the test data and then it can be run single or multiple times but again just for the single step, not for the complete test
+
+
+
+Dictionary: In C#, Dictionary is a generic collection which is generally used to store key/value pairs.
+            Dictionary is defined under System.Collection.Generic namespace. It is dynamic in nature means the size of the dictionary is grows according to the need.
+			
+			Important Points:
+
+The Dictionary class implements the
+IDictionary<TKey,TValue> Interface
+IReadOnlyCollection<KeyValuePair<TKey,TValue>> Interface
+IReadOnlyDictionary<TKey,TValue> Interface
+IDictionary Interface
+In Dictionary, the key cannot be null, but value can be.
+In Dictionary, key must be unique. Duplicate keys are not allowed if you try to use duplicate key then compiler will throw an exception.
+In Dictionary, you can only store same types of elements.
+The capacity of a Dictionary is the number of elements that Dictionary can hold.
+
+
+static public void Main () { 
+          
+        // Creating a dictionary 
+        // using Dictionary<TKey,TValue> class 
+        Dictionary<int, string> My_dict1 =   
+                       new Dictionary<int, string>();  
+            
+          // Adding key/value pairs  
+          // in the Dictionary 
+          // Using Add() method 
+          My_dict1.Add(1123, "Welcome"); 
+          My_dict1.Add(1124, "to"); 
+          My_dict1.Add(1125, "GeeksforGeeks"); 
+            
+          foreach(KeyValuePair<int, string> ele1 in My_dict1) 
+          { 
+              Console.WriteLine("{0} and {1}", 
+                        ele1.Key, ele1.Value); 
+          } 
+          Console.WriteLine();
+		  
+		  
+		  
+		  
+Important Properties and Methods of IDictionary
+
+Property				Description
+Count					Gets the total number of elements exists in the Dictionary<TKey,TValue>.
+IsReadOnly				Returns a boolean indicating whether the Dictionary<TKey,TValue> is read-only.
+Item					Gets or sets the element with the specified key in the Dictionary<TKey,TValue>.
+Keys					Returns collection of keys of Dictionary<TKey,TValue>.
+Values					Returns collection of values in Dictionary<TKey,TValue>.
+
+Method					Description
+Add						Adds an item to the Dictionary collection.
+Add						Add key-value pairs in Dictionary<TKey, TValue> collection.
+Remove					Removes the first occurrence of specified item from the Dictionary<TKey, TValue>.
+Remove					Removes the element with the specified key.
+ContainsKey				Checks whether the specified key exists in Dictionary<TKey, TValue>.
+ContainsValue			Checks whether the specified key exists in Dictionary<TKey, TValue>.
+Clear					Removes all the elements from Dictionary<TKey, TValue>.
+
+
+IEnumerable Interface: 
+IEnumerable is an interface that defines one method, GetEnumerator which returns an IEnumerator interface.
+
+Key Points
+IEnumerable interface contains the System.Collections.Generic namespace.
+IEnumerable interface is a generic interface which allows looping over generic or non-generic lists.
+IEnumerable interface also works with linq query expression.
+IEnumerable interface Returns an enumerator that iterates through the collection.
+
+Ienumerable                                                    Ienumerator
+1. It is an interface having one method GetEnumerator        1. It is an interface with another type which is returned by GetEnumerator
+                                                                it is having two methods 
+																MoveNext(): Sets the enumerator to the next element of the collection;
+																Reset(): Sets the enumerator to its initial position,
+																Current(property):which returns the current element in the collection.
+																
+																
+Example:
+
+class Program  
+    {  
+        public static void Main(String[] args)  
+        {  
+            IEnumerable<int> Values = from value in Enumerable.Range(1, 10) select value;  
+            foreach (int a in Values)  
+            {  
+                Console.WriteLine(a);  
+            }  
+            Console.ReadLine();  
+        }  
+    }  
+
+class Program  
+    {  
+        public static void Main(String[] args)  
+        {  
+            List<string> List = new List<string>();  
+            List.Add("Sourav");  
+            List.Add("Ram");  
+            List.Add("shyam");  
+            List.Add("Sachin");  
+            IEnumerable names = from n in List where (n.StartsWith("S")) select n;  
+            foreach (string name in names)  
+            {  
+                Console.WriteLine(name);  
+            }  
+            Console.ReadLine();  
+        }  
+    }  	

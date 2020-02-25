@@ -1,0 +1,114 @@
+Intrview questions on Alerts
+
+1. Different types of alerts 
+
+**Alert : > Alert is a pop up window that comes up on screen. There are many user actions that 
+            can result in an alert on screen. For e.g.user clicked on a button that displayed a message 
+             or may be when you entered a form, HTML page asked you for some extra information. 
+		  > Selenium provides us with an interface called IAlert (It is a Interface). 
+		    EX : IAlert sample = driver.SwitchTo().Alert()
+		  > It is present in OpenQA.Selenium.IAlert package. Alert interface gives us 
+		    following methods to deal with the alert
+		    # Accept()  : To Accept the alert
+			# Dismiss() : To Dismiss the alert
+			# Text : To get the text of the alert
+			# SendKeys(): To write some text to the alert
+			
+**Fallowing are the different types of alerts
+		  > Simple Alert : Simple alerts just have a OK button on them. They are mainly used 
+		    to display some information to the user.
+		  > We have to switch Webdriver control to alert box by using(IAlert simpleAlert = driver.SwitchTo().Alert() 
+		    and to click on OK button use simpleAlert.Accept)
+		  
+		  > Confirmation Alert : This alert comes with an option OK and Cancel buttons it allows user to either 
+		    accept or dismiss
+		  > To accept the alert you can use IAlert.Accept() and to dismiss you can use the IAlert.Dismiss().
+		  
+		  > Prompt Alerts : In prompt alerts you get an option to add text to the alert box. This is specifically 
+		                    used when 
+		                    some input is required from the user. We will use the SendKeys() method to 
+							type something in the Prompt alert box. with OK and Cancel buttons
+		                    EX : driver.SwitchTo().Alert().SendKeys("ABC")
+
+
+Intrview questions on Javascript
+
+1. Javascript method to highlight an element
+
+  ** Ex:   IWebElement ele = driver.FindElement(By.XPath("//a[text()='My Account']"));
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("arguments[0].style.border='4px groove red'", ele);
+
+2. Javascript method to sendkeys
+
+  ** Ex:  js.ExecuteScript("document.getElementById('password').value='Omsairam@123';");
+
+3. Javascript scroll methods 
+
+  ** page scroll down  Ex:JavascriptExecutor js = (JavascriptExecutor)driver;
+                          js.ExecuteScript("window.scrollBy(0,-250)");
+ 
+  ** page scroll up    Ex: JavascriptExecutor js = (JavascriptExecutor)driver;   
+                           js.ExecuteScript("window.scrollBy(0,250)");
+
+  ** Scrolling to Bottom of a page Ex:JavascriptExecutor js = ((JavascriptExecutor) driver);
+                                   js.ExecuteScript("window.scrollTo(0, document.body.scrollHeight)");
+
+  ** Javascript method to scroll to an element Ex : js.ExecuteScript("arguments[0].scrollIntoView(true);",element);
+
+4. Javascript click method
+  
+  ** Ex: JavascriptExecutor js = (JavascriptExecutor)driver;
+         js.ExecuteScript("arguments[0].click()", element);
+
+5. Javascript method to open multiple windows
+
+  ** Ex: IJavaScriptExecutor jsExecutor = (IJavaScriptExecutor)driver;
+         string jsOpenNewWindow = "window.open('https://www.google.com/')";
+	/* Run above javascript. */
+            for (int i = 0; i < 6; i++)
+            {
+                jsExecutor.ExecuteScript(jsOpenNewWindow);
+                Thread.Sleep(1000);
+                Console.WriteLine("One opennd.");
+
+            }
+            driver.Close();
+ 
+
+Implicit,Explicit and Fluient waits examples in selenium c#
+
+1. Implicit wait
+   
+    **Ex: driver.Manage().Timeouts().PageLoad=TimeSpan.FromSeconds(1000);
+          driver.Manage().Timeouts().ImplicitWait=TimeSpan.FromSeconds(1000);
+		  
+2. Difference between get method and navigateto method
+
+     Get Method()                                      Navigate Method()
+   
+   1.It will open and URL and wait till the     1. Navigates to an URL and It will not wait till the whole page gets loaded.
+     whole page get loaded   
+   2. It does not maintain the browser history  2. It does not maintain the browser history and cookies Navigate to will help to move back or forward
+      and cookies so Not allow to move back        Navigate to will help to move back or forward 
+	  or farward 		
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

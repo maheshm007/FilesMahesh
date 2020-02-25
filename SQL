@@ -1,0 +1,95 @@
+** SQL: Structured Query Language
+
+Q1. What are the different subsets of SQL?
+	DDL (Data Definition Language) – It allows you to perform various operations on the database such as CREATE, ALTER and DROP objects.
+	DML ( Data Manipulation Language) – It allows you to access and manipulate data. It helps you to select,insert, update, delete and retrieve data from the database.
+	DCL ( Data Control Language) – It allows you to control access to the database. Example – Grant, Revoke access permissions.
+	TCL ( Transaction Control Language) - Commit, Rollback and Savepoint
+	
+	
+	
+Q2. What SQL Constraints
+    Primary Key: The PRIMARY KEY constraint uniquely identifies each record in a table.
+	             Null values not allowed
+				 
+				 Example: CREATE TABLE Persons (
+                          ID int NOT NULL PRIMARY KEY,
+                          LastName varchar(255) NOT NULL,
+                          FirstName varchar(255),
+                          Age int
+                          );
+	Foregin Key: A FOREIGN KEY is a key used to link two tables together.
+                 A FOREIGN KEY is a field (or collection of fields) in one table that refers to the PRIMARY KEY in another table.
+                 The table containing the foreign key is called the child table, and the table containing the candidate key is 
+				 called the referenced or parent table.
+	
+                 Example: CREATE TABLE Orders (
+						  OrderID int NOT NULL PRIMARY KEY,
+                          OrderNumber int NOT NULL,
+                          PersonID int FOREIGN KEY REFERENCES Persons(PersonID)
+                          );
+	Not Null: The NOT NULL constraint enforces a column to NOT accept NULL values.
+	        
+			     Example: CREATE TABLE Persons (
+						  ID int NOT NULL,
+                          LastName varchar(255) NOT NULL,
+                          FirstName varchar(255) NOT NULL,
+                          Age int
+                          );
+						  
+	Unique: The UNIQUE constraint ensures that all values in a column are different.
+            Both the UNIQUE and PRIMARY KEY constraints provide a guarantee for uniqueness for a column or set of columns.
+            A PRIMARY KEY constraint automatically has a UNIQUE constraint.
+			
+			Example: CREATE TABLE Persons (
+                     ID int NOT NULL UNIQUE,
+                     LastName varchar(255) NOT NULL,
+                     FirstName varchar(255),
+                     Age int
+                     );
+					  
+	Check: The CHECK constraint is used to limit the value range that can be placed in a column.
+	
+	        Example: CREATE TABLE Persons (
+                     ID int NOT NULL,
+                     LastName varchar(255) NOT NULL,
+                     FirstName varchar(255),
+                     Age int CHECK (Age>=18)
+                     );
+					
+	Default: The DEFAULT constraint is used to provide a default value for a column.
+	
+	        Example: CREATE TABLE Persons (
+                     ID int NOT NULL,
+                     LastName varchar(255) NOT NULL,
+                     FirstName varchar(255),
+                     Age int,
+                     City varchar(255) DEFAULT 'Sandnes'
+                     );
+					 
+Q3:How do we use DISTINCT statement? What is its use?
+
+    The DISTINCT statement is used with the SELECT statement. 
+	If the records contain duplicate values then DISTINCT is used to select different values among duplicate records.
+	
+ 	Example: SELECT DISTINCT column_name(s) (Select DISTINCT LastNAme from Emp)
+             FROM table_name;
+			 
+Q4: What are different Clauses used in SQL?
+
+    WHERE Clause: Is used to filter therecords and used to extract only those records that fulfill a specified condition.
+	        
+			Exaple:SELECT * FROM Customers
+				   WHERE Country='Mexico';
+				   
+	ORDER BY Clause: The ORDER BY keyword is used to sort the result-set in ascending or descending order.
+                     The ORDER BY keyword sorts the records in ascending order by default. 
+					 To sort the records in descending order, use the DESC keyword.
+					 
+			Example: SELECT * FROM Customers 
+			ORDER BY Country;                                      For Descending SELECT * FROM Customers
+																   ORDER BY Country DESC;
+																   
+	HAVING Clause: Having Clause is mainly used with aggrigate functions because 
+																   
+			 

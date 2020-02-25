@@ -1,0 +1,26 @@
+What is API Testing?
+ 
+  * API testing is a software testing type that validates application programming interface.
+  * It mainly concentrates on the business logic layer of the software architecture.
+  * In API Testing, you use software to send calls to the API, get output, and note down the system's response.
+  
+What are the common steps performed on API
+  
+ The common steps performed on API
+  
+   * Verification of API whether it is updating any data structure
+   * Verify if the API does not returning anything
+   * Based on input conditions, returned values from the API’s are checked
+   * Verification of the API whether it triggers some other event or calls another API
+
+Key difference between UI level and API testing
+
+ UI Testing													API Tetsing
+
+ * User Interface testing is like user interacts         * API testing is like communication between two seperate s/w systems
+   the applications, testing application elements        * A software system implementing an API contains functions or 
+   like fonts, images, layouts etc.                        sub-routines that can be executed by another software system
+ 
+ * UI testing basically focuses on look and feel 
+   of an application.
+    

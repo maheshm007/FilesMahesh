@@ -1,0 +1,59 @@
+difference between put and post
+diference between soup and rest
+difference between drop delete and truncate
+how to insert value into text box without using send keys
+scroll down till the web element javascript
+how to find the third highest salary
+When to use having and group by clause
+how to insert values into excel sheet
+how to read text from pdf
+
+Interview questions
+1. Exceptions in selenium
+2. There are multiple iframes and need to search an element present in perticular iframe
+3. How to handle the window popup other that autoit
+4. Explaine yor automation framework
+5. How to identify siblings in xpath
+6. Synchronization in selenium (wait methods)
+7. difference between get and navigateto methods
+8. Where you use oops concepts in your automation framework
+9. Collections in c# difference between list and set
+10. What is hash map and how you use hash map
+11. What typw of exception will throw when you fetching data from excel to hash map and storing in hash map whnt there are duplicate keys (like you are using colimn header of excel file as key)
+12. How to insert value into text box without using send keys
+13. Scroll down till the web element javascript
+14. How to read text from pdf
+15. How to insert value into text box without using send keys
+16. Scroll down till the web element javascript
+
+
+
+
+******************************************************************NUnit Interview Questions*******************************************************************************************************
+
+1.What is NUnit?
+  
+  * It is UNit testing framework for all .Net Languages. Initially ported from JUnit
+  * Current version 2.3, it is written entirelly in C# and has been completely redisigned 
+    to take advantage of many .NET language features.
+  * It provides a class liberary which includes some classes, features and methods which 
+    helps to write test scripts.
+   
+2. Features of NUnit
+
+  @Assertions: 
+  
+  * Assertions are central to unit testing in any of xUnit frameworks. NUnit provides rich set 
+    of assertions as static methods of Assert class
+  * Most commanly used asertions are as below
+    
+    Equality Asserts, Identity Asserts, Comparison Asserts, Type Asserts, Condition tests, Utility methods, 
+	StringAssert, CollectionAssert, FileAssert
+
+  @Attributes: 
+
+   Category, Description, ExpectedException, Explicit, Ignore, Platform, Property, Suite, Test, 
+   TestFixture, Setup, Teardown, SetupFixture, TestFixtureSetUp, TestFixtureTearDown 
+   
+  
+           

@@ -1,0 +1,420 @@
+******************************LINQ****************************************
+LINQ: Language Integrated Query. It's a .NET framework module that connects native 
+      data querying capabilities to .net Language.
+      It offers easy data access from in-memory objects, databases, XML documents, 
+	  and many more.
+	  
+**What are the advantages of using LINQ in Dataset?
+    The advantages of LINQ are as follows -
+
+     1. The primary purpose of using LINQ is to retrieve complex query in a dataset.
+	 2. LINQ is used to combine the values from two different data set.
+     3. It is also used to fetch a unique value from the data set.
+     4. LINQ gives a more precise way than SQL query of querying the dataset.
+     5. LINQ also provides more functionality as compared with ADO.NET.
+	 
+	 
+**What are the different ways to write LINQ query syntax?
+    There are two common ways to write a LINQ query to data sources.
+
+	 1. Query syntax or Expression syntax
+     2. Method syntax or method Extension Syntax
+	 
+**What is the Query syntax?
+
+     1. Query syntax is similar to Structured Query Language for the database. It is described 
+	    within the C# 
+	 2. It starts with FROM keyword and ends with SELECT or GROUP BY keyword.
+     3. It is same as SQL (Structured Query Language) syntax.
+     4. It uses some different operators like joining, grouping, sorting, filtering operators 
+	    to construct the desired result.
+     5. It uses implicitly typed variable to hold the result of the LINQ query.
+	 
+**What is the difference between First() and FirstOrDefault() selector methods in LINQ?
+     1. The First() method always expects at least one element in the result set. 
+	    If there isn't any element in the result, First() returns an exception. 
+		While FirstOrDefault() is compatible with a result set having 0 elements, 
+		it does not throw any exception.
+		
+Q:What is partial class and its advantages
+ 
+ Ans: Partial class is a special feature in C#.It has a special ability to impliment the functionality of a single class into multiple files
+      And all these files are combined into single class file when the application is compiled and the partial class is created using Partial keyword
+      
+	Example:
+	public partial class Student
+    {
+        private string Author_name;
+        private int Total_articles;
+
+        public Student(string a, int t)
+        {
+            this.Author_name = a;
+            this.Total_articles = t;
+        }
+    }
+
+    public partial class Student
+    {
+        public void Display()
+        {
+            Console.WriteLine("Author's name is : " + Author_name);
+            Console.WriteLine("Total number articles is : " + Total_articles);
+        }
+
+        static void Main(string[] args)
+        {
+            Student s = new Student("Mahesh", 10);
+            s.Display();
+            Console.ReadLine();
+        }
+    }	  
+	
+	Real Time Use of Partil class (Advantages)
+	 
+	 1. ASP.NET auto-generated code : Microsoft themselves uses partial classes in ASP.NET, LINQ and EF code generation. 
+	    For instance when we look at ASP.NET there are two parts, one is the auto-generated code of a page and the other is code you write.
+		
+	 2. LINQ and EF also use partial classes and methods heavily because of the auto-generation nature of these technologies.
+	    
+     3. Better maintenance by compacting large classes : It is better to impliment partial classes for better maintenance of the project when classs and methods are large
+	 
+	 4. Multiple people working on the same class: It is better to use partial class implimentation When multiple users working on the same class simultaneously 
+	 
+	 5. You can also maintain your application in an efficient manner by compressing large classes into small ones.
+
+Q: What is an extension method in C#(introduced in 3.0)
+
+Ans: Extension method concept allows you add new methods in the existing class/structure without modifying the original source code 
+
+ Exapmle:
+
+*****Original method********
+
+// C# program to illustrate the concept  
+// of the extension methods 
+using System; 
+   
+namespace ExtensionMethod { 
+   
+// Here Geek class contains three methods 
+// Now we want to add two more new methods in it  
+// Without re-compiling this class 
+class Geek { 
+   
+  // Method 1 
+  public void M1()  
+  { 
+      Console.WriteLine("Method Name: M1"); 
+  } 
+   
+  // Method 2 
+  public void M2() 
+  { 
+      Console.WriteLine("Method Name: M2"); 
+  } 
+   
+  // Method 3 
+  public void M3() 
+  { 
+      Console.WriteLine("Method Name: M3"); 
+  } 
+  
+ *****Modify original method from extension method********
+ 
+ // C# program to illustrate the concept 
+// of the extension methods 
+using System; 
+  
+namespace ExtensionMethod { 
+  
+// This class contains M4 and M5 method 
+// Which we want to add in Geek class. 
+// NewMethodClass is a static class 
+static class NewMethodClass { 
+  
+    // Method 4 
+    public static void M4(this Geek g) 
+    { 
+        Console.WriteLine("Method Name: M4"); 
+    } 
+  
+    // Method 5 
+    public static void M5(this Geek g, string str) 
+    { 
+        Console.WriteLine(str); 
+    } 
+} 
+  
+// Now we create a new class in which 
+// Geek class access all the five methods 
+public class GFG { 
+  
+    // Main Method 
+    public static void Main(string[] args) 
+    { 
+        Geek g = new Geek(); 
+        g.M1(); 
+        g.M2(); 
+        g.M3(); 
+        g.M4(); 
+        g.M5("Method Name: M5"); 
+    } 
+} 
+} 
+  
+    
+ } 
+     
+} 
+         
+Q: Object Oriented Concepts
+
+1. Inheritance: 
+   **  Inheritance allows us to define a class in terms of another class, which makes it easier to create and maintain an application.
+   **  It creates an IS-A relationship between base class and derived class   
+    
+   Advantages (Real time use in automation)
+   
+   **  In our automation framework create a base class in the framework to initialize webdriver interface,WebDriver waits, Property files, Excels, etc., in the Base Class.
+   **  We extend the Base Class in other classes such as Tests and Utility Class
+   
+   Example:
+   
+   namespace Polymorphism
+{
+    class Base
+    {
+        public void display()
+        {
+            Console.WriteLine("Base class method");
+        }
+    }
+
+    class Derived : Base
+    {
+        public void read()
+        {
+            Console.WriteLine("Derived class method");
+        }
+    }
+   public class OOPS
+    {
+        public static void Main(string[] args)
+        {
+
+        }
+    }
+}
+
+Q: Various behaviours of Inheritance in fallowing cases
+
+Case1: when the virtual keyword is used with a method without implementation - or - when a method is used without implementation
+       Example:
+class A                                 class A  
+{                                       {                                        
+    public virtual void Show();           public void Show();
+} 										}
+
+Ans: Error  -- 'ConsoleApplication.A.Show()' must declare a body because it is not marked abstract, extern, or partial
+
+Case2: when the base class method is overridden by a derived class using the override keyword
+
+Example:
+
+class Program  
+{  
+    static void Main(string[] args)  
+    {  
+        A obj = new B();  
+        obj.Show();  
+        Console.ReadLine();  
+    }  
+}  
+class A  
+{  
+    public virtual void Show()  
+    {  
+        Console.WriteLine("A.Show()");  
+    }  
+}  
+class B : A  
+{  
+    public override void Show()  
+    {  
+        Console.WriteLine("B.Show()");  
+    }  
+}  
+
+Ans: B.Show()
+
+Case3: When the base class method is overridden by a derived class using the new keyword
+
+Example:
+
+class Program  
+{  
+    static void Main(string[] args)  
+    {  
+        A obj = new B();  
+        obj.Show();  
+        Console.ReadLine();  
+    }  
+}  
+class A  
+{  
+    public virtual void Show()  
+    {  
+        Console.WriteLine("A.Show()");  
+    }  
+}  
+class B : A  
+{  
+    public new void Show()  
+    {  
+        Console.WriteLine("B.Show()");  
+    }  
+}  
+
+Ans: A.Show()
+
+Case4: When the fallowing code execute
+
+ Example:
+ 
+ class Program  
+{  
+    static void Main(string[] args)  
+    {  
+        A obj = new B();  
+        obj.Show();  
+        Console.ReadLine();  
+    }  
+}  
+class A  
+{  
+    public virtual void Show()  
+    {  
+        Console.WriteLine("A.Show()");  
+    }  
+}  
+class B : A  
+{  
+    public void Show()  
+    {  
+        Console.WriteLine("B.Show()");  
+    }  
+}  
+
+Ans: Warning 1 'ConsoleApplication.B.Show()' hides inherited member 'ConsoleApplication.A.Show()'. 
+     To make the current member override that implementation, add the override keyword. Otherwise add the new keyword.
+
+Output:
+
+A.Show()
+
+Case5: What happen when the abstract method is used with a non-abstract class
+
+ Example:
+ class A  
+  {  
+    public abstract void Show()  
+    {  
+        Console.WriteLine("A.Show()");  
+    }  
+  } 
+  
+  Ans: Error 1 'ConsoleApplication.A.Show()' cannot declare a body because it is marked abstract
+       Error 2 'ConsoleApplication.A.Show()' is abstract but it is contained in non-abstract class 'ConsoleApplication.A'
+
+2. Encapsulation:
+
+   ** Encapsulation is defined as the wrapping up of data under a single unit.
+   ** It is the mechanism that binds together code and the data it manipulates.
+   ** Technically in encapsulation, the variables or data of a class are hidden from any other class and can be accessed only through any member function of own class in which they are declared.
+   ** As in encapsulation, the data in a class is hidden from other classes, so it is also known as data-hiding.
+   
+   Advantages (Real time use in automation)
+   
+   ** In page object model while designing page factory we can use @FindBy  class to declare and initilize data members 
+   ** To give public access to private data members using the encapsulation 
+   
+   Example:
+
+// C# program to illustrate encapsulation 
+using System; 
+  
+public class DemoEncap { 
+      
+    // private variables declared 
+    // these can only be accessed by 
+    // public methods of class 
+    private String studentName; 
+    private int studentAge; 
+      
+    // using accessors to get and  
+    // set the value of studentName 
+    public String Name 
+    { 
+          
+        get
+        { 
+            return studentName;     
+        } 
+          
+        set 
+        { 
+            studentName = value; 
+        } 
+          
+    } 
+      
+    // using accessors to get and  
+    // set the value of studentAge 
+    public int Age 
+    { 
+          
+        get 
+        { 
+            return studentAge;     
+        } 
+          
+        set 
+        { 
+            studentAge = value; 
+        } 
+          
+    } 
+  
+      
+} 
+  
+// Driver Class 
+class GFG { 
+      
+    // Main Method 
+    static public void Main() 
+    { 
+          
+        // creating object 
+        DemoEncap obj = new DemoEncap(); 
+  
+        // calls set accessor of the property Name,  
+        // and pass "Ankita" as value of the  
+        // standard field 'value' 
+        obj.Name = "Ankita"; 
+          
+        // calls set accessor of the property Age,  
+        // and pass "21" as value of the  
+        // standard field 'value' 
+        obj.Age = 21; 
+  
+        // Displaying values of the variables 
+        Console.WriteLine("Name: " + obj.Name); 
+        Console.WriteLine("Age: " + obj.Age); 
+    } 
+} 
+	            
+
+ 
+

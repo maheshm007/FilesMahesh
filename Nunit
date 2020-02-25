@@ -1,0 +1,38 @@
+Q:What is NUnit?
+
+Ans: NUnit is unit testing framework for all .net languages
+     NUnit is Open Source software and NUnit 3.0 is released under the MIT license.  
+	 This framework is very easy to work and has user friendly attributes for working.
+	 
+NUnit Test Adapter for Visual Studio:
+
+The NUnit Test Adapter allows you to run NUnit tests inside Visual Studio. 
+
+Q: Attributes on NUnit
+
+Ans:Below are the attributes of NUnit
+
+ ** [TestFixture]: This attribute is marked for classes that contains tests
+                   When you mention this attribute to a class in your project, 
+				   the Test Runner application will scan it for test methods.
+    [Test] : The Test attribute indicates that a method within a test fixture should be run by the Test Runner application. 
+	         The method must be public, return void, and will not be run when the Test Fixture is run. 
+	         
+	[SetUp]: This attribute is used when you want to execute a piece of code before each test case.
+	         It identifies a method to be executed each time before a TestMethod/Test is executed.
+			 
+	[TearDown]: This attribute is used to execute a pice of code after compleately executing ecah test case 
+	            it will not execute if test failes or through any error message.
+				
+	[TestFixtureSetUp]: This attribute is used inside a TestFixture to provide a single set of functions 
+	                    that are performed once prior to executing any of the tests in the fixture.
+						A TestFixture can have only one TestFixtureSetUp method. 
+						If more than one is defined the TestFixture will compile successfully but its tests will not run.
+					    Ex: [TestFixtureSetUp] public void Init()
+						
+	[TestFixtureTearDown]: This attribute is used inside a TestFixture to provide a single set of functions that are performed once after all tests are completed.
+	                       Ex: [TestFixtureTearDown] public void Cleanup()
+						  
+	[ExpectedException(ExceptionType)]: The ExpectedException rule allows you to verify that your code throws a specific exception.
+	
+	[Ignore]: Marks a test method or a test class which (temporarily) should not be executed
